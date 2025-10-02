@@ -96,6 +96,8 @@ function App() {
     formData.append("outputs", JSON.stringify([{ width, height, format }]));
     formData.append("maintainAspect", String(maintainAspect));
     if (maintainAspect) formData.append("fit", fit);
+    // Force single image download on backend
+    formData.append("single", "true");
 
     const res = await fetch("http://localhost:5000/resize", {
       method: "POST",
