@@ -99,7 +99,8 @@ function App() {
     // Force single image download on backend
     formData.append("single", "true");
 
-    const res = await fetch("http://localhost:5000/resize", {
+    // Direct URL to your Render backend
+    const res = await fetch("https://your-backend-url.onrender.com/resize", {
       method: "POST",
       body: formData,
     });
@@ -217,6 +218,15 @@ function App() {
         >
           Generate & Download
         </button>
+      </div>
+      
+      {/* Footer */}
+      <div className="mt-8 text-center">
+      
+        <p className="text-gray-600 text-sm">
+          Designed and developed by{" "}
+          <a href="https://github.com/ChinmayGambhirrao"> <span className="font-semibold text-gray-800">Chinmay Gambhirrao ♡</span></a>
+        </p>
       </div>
     </div>
   );
