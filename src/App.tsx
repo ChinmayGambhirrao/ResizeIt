@@ -99,8 +99,8 @@ function App() {
     // Force single image download on backend
     formData.append("single", "true");
 
-    // Replace with your actual Render backend URL
-    const res = await fetch("https://resizeit-backend-3.onrender.com", {
+    // Add /resize endpoint to the backend URL
+    const res = await fetch("https://resizeit-backend-3.onrender.com/resize", {
       method: "POST",
       body: formData,
     });
